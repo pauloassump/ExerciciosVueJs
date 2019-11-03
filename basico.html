@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p>1) {{ 2 + 2 }}</p>
+        <p>2) {{ "Função soma acima em JS. E aqui convertendo para maiúsculo.".toUpperCase() }}</p>
+        <p>3) Produto: {{ nome }} <br /> R${{preco }} <br/> Desconto: {{desconto}}</p>
+        <p>4) Hora Certa: {{ horaCerta() }}</p>
+    </div>
+
+    <script>
+        //Vue Instance
+        new Vue({
+            el: "#app",
+            data: {
+                nome: 'Caneta',
+                preco: 6.85,
+                desconto: 0.15
+
+            },
+            methods: {
+                horaCerta() {
+                   return new Date().toLocaleString()
+                },   
+            }
+        })
+    </script>
+</body>
+</html>
